@@ -1,16 +1,14 @@
-.container div {
-    display: inline-block;
+.container { 
+    padding: 150px; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    align-items: stretch;
+    justify-items: center;
 }
 
-.container {
-    width: 50%; 
-    position: relative;
-    justify-self: center;
+.container > div img {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    max-width: 100%;
 }
-
-.container div img {
-    display: inline;
-    width: 100px;
-    height: 100px;
-}
-
