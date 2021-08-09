@@ -1,14 +1,43 @@
-.container { 
-    padding: 150px; 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    align-items: stretch;
-    justify-items: center;
+* {
+    /* font-family: 'Luckiest Guy', cursive; */
+    box-sizing: border-box;
 }
 
-.container > div img {
+body {
+    margin: 0;
+    background: radial-gradient(#bcaaa4, #8c6d62);
+}
+
+.game-title {
+    color: #d7ccc8;
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: normal;
+    text-align: center;
+    font-size: 5em;
+}
+
+.game-info-container {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5em;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.card-container { 
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    justify-content: center;
+
+}
+
+.card-container > div img {
     border: 1px solid #ccc;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     max-width: 100%;
-}
+}‚
