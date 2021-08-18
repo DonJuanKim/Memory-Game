@@ -65,6 +65,6 @@ body {
     transform: rotateY(-180deg);
 }
 
-.card.flipCard {
+.flippedCard {
     transform: rotateY(180deg);
 }
