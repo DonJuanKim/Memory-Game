@@ -67,4 +67,9 @@ body {
 
 .flippedCard {
     transform: rotateY(180deg);
+    transition-duration: 1s;
+}
+.matched {
+    transform: rotateY(180deg);
+
 }
