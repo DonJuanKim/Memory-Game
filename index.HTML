@@ -15,11 +15,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 <body>
     <h1 class= "game-title">Match The Cats</h1>
+    <div id= "overlay-start-text" class="overlay visible">
+        CLICK TO START
+    </div>
+    <div id= "overlay-gameover-text" class="overlay">
+        GAME OVER
+        <span id= "restart" class="overlay-small">RESTART</span>
+    </div>
+    <div id= "overlay-win" class="overlay">
+        WIN
+    </div>
+    
     <div class="game-container">
         <div class="game-info-container">
-            <button class = "startBtn" id = "startBtn">Start</button>
             <div class="game-info">
-                Time <span id="time">120</span>   
+                Time <span id="countdown">1 : 00</span>   
             </div>
             <div class="game-info">
                 Score <span id="score">0</span>
@@ -28,7 +38,7 @@
         <div class="card-container">
             <div class="card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-1" src="images/cyingCat.jpeg" alt="cryingCat" width="150" height="170">
@@ -36,7 +46,7 @@
             </div>
             <div class="card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-2" src="images/bigMouthCat.jpeg" alt="cryingCat" width="150" height="170">
@@ -44,7 +54,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-3" src="images/gaggingCat.jpeg" alt="gaggingCat" width="150" height="170">
@@ -52,7 +62,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-4" src="images/highCat.jpeg" alt="longLegsCat" width="150" height="170">
@@ -60,7 +70,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-5" src="images/longLegsCat.jpeg" alt="longLegsCat" width="150" height="170">
@@ -68,7 +78,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-6" src="images/nyanCat.jpeg" alt="nyanCat" width="150" height="170">
@@ -76,7 +86,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-7" src="images/thumbsUpCat.jpeg" alt="thumbsUpCat" width="150" height="170">
@@ -84,7 +94,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-8" src="images/hipCat.jpeg" alt="longLegsCat" width="150" height="170">
@@ -92,7 +102,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-9" src="images/womanAndCat.png" alt="womanAndCat" width="150" height="170"> 
@@ -100,7 +110,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-1" src="images/cyingCat.jpeg" alt="cryingCat" width="150" height="170">
@@ -108,7 +118,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-3" src="images/gaggingCat.jpeg" alt="gaggingCat" width="150" height="170">
@@ -116,7 +126,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-5" src="images/longLegsCat.jpeg" alt="longLegsCat" width="150" height="170">
@@ -124,7 +134,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-6" src="images/nyanCat.jpeg" alt="nyanCat" width="150" height="170">
@@ -132,7 +142,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-7" src="images/thumbsUpCat.jpeg" alt="thumbsUpCat" width="150" height="170">
@@ -140,7 +150,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-9" src="images/womanAndCat.png" alt="womanAndCat" width="150" height="170"> 
@@ -148,7 +158,7 @@
             </div>
             <div class="card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-2" src="images/bigMouthCat.jpeg" alt="cryingCat" width="150" height="170">
@@ -156,7 +166,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-8" src="images/hipCat.jpeg" alt="longLegsCat" width="150" height="170">
@@ -164,7 +174,7 @@
             </div>
             <div class= "card">
                 <div class="card-back">
-                    Back
+                 
                 </div>
                 <div class="card-front">
                     <img id="card-4" src="images/highCat.jpeg" alt="longLegsCat" width="150" height="170">
