@@ -42,19 +42,10 @@ body {
 
 .overlay.visible {
     display: flex;
+    flex-direction: column;
     cursor: pointer;
 }
 
-/* #startBtn {
-    position: absolute;
-    z-index: 1;
-    left: 45%;
-    top: 45%;
-    width: 200px;
-    height: 200px;
-    background-color: invisible;
-}
- */
 .card-container { 
     display: grid;
     grid-template-columns: repeat(6, auto);

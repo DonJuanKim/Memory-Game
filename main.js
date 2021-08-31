@@ -2,6 +2,8 @@ const cards = document.querySelectorAll('div.card');
 const startBtn = document.getElementById('overlay-start-text');
 const countdown = document.getElementById('countdown');
 const score = document.getElementById('score');
+const gameover = document.getElementById('overlay-gameover-text');
+const win = document.getElementById('overlay-win');
 let points = 0;
 
 
@@ -49,29 +51,50 @@ for(let i = 0; i < cards.length; i++) {
 
 
 
-// click to start the game 
+// countdown function
 
-startBtn.addEventListener('click', function(){
+function testFunction () {
     
-    // countdown as soon as the game starts
-
     const startingMinutes = 1;
     let time = startingMinutes * 60; 
-    startBtn.classList.remove('visible');
-    
-    setInterval(updateCountdown, 1000);
+    let refreshInterval = setInterval(updateCountdown, 1000);
+
     function updateCountdown() {
+    
         const minutes = Math.floor(time / 60);
         let seconds = time % 60;
         countdown.innerHTML = `${minutes} : ${seconds}`;
         time--;
-        if (time <55) { 
-            clearInterval(time);
-            startBtn.classList.add('visible');
-        }
+        let matchedCards = document.querySelectorAll('.matched');
 
-    }
+        if (time < 50) { 
+            clearInterval(refreshInterval);
+            gameover.classList.add('visible');
+            flippedCard[0].className = 'card';
+            // for(let i=0; i <= matchedCards.length; i++){
+            //     matchedCards[i].classList.remove('matched');
+            } else if (points >= 180) {
+                flippedCard[0].className = 'card';
+            }
+}};
+
+
+startBtn.addEventListener('click', function (){
     
-    // remove the overlay + shuffle the cards 
     shuffleCards();
+    startBtn.classList.remove('visible');
+    testFunction ();
+});
+
+gameover.addEventListener('click', function(){
+    shuffleCards();
+    gameover.classList.remove('visible');
+    testFunction ();
+});
+
+
+win.addEventListener('click', function (){
+    shuffleCards();
+    win.classList.remove('visible');
+    testFunction();
 });
