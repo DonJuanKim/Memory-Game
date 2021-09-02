@@ -37,7 +37,9 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    background-color: rgba(63, 63, 63, 0.651);
     color: white;
+    font-size: 3em;
 }
 
 .overlay.visible {
@@ -87,10 +89,8 @@ body {
     transform: rotateY(180deg);
     transition-duration: 1s;
 }
-.matched {
+.card.matched {
     transform-style: preserve-3d;
     transform: rotateY(180deg);
     pointer-events: none;
-
-
 }

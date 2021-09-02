@@ -23,12 +23,11 @@ function checkMatch(flippedCard) {
     if (firstPick == secondPick) {
         console.log("match");
         setTimeout(() => {
-        flippedCard[0].className = 'matched';
-        flippedCard[1].className = 'matched';
-        }, 1000);
+            flippedCard[0].className = 'card matched';
+            flippedCard[1].className= 'card matched';
+            }, 1000);
         points = points + 20;
         score.innerHTML = points;
-
         return points
     } else {
         setTimeout(() => {
@@ -53,48 +52,59 @@ for(let i = 0; i < cards.length; i++) {
 
 // countdown function
 
-function testFunction () {
+function reset() {
     
     const startingMinutes = 1;
     let time = startingMinutes * 60; 
     let refreshInterval = setInterval(updateCountdown, 1000);
 
     function updateCountdown() {
-    
-        const minutes = Math.floor(time / 60);
+        let minutes = Math.floor(time / 60); 
         let seconds = time % 60;
         countdown.innerHTML = `${minutes} : ${seconds}`;
         time--;
-        let matchedCards = document.querySelectorAll('.matched');
-
-        if (time < 50) { 
+   
+        if (time < 0) { 
             clearInterval(refreshInterval);
             gameover.classList.add('visible');
-            flippedCard[0].className = 'card';
-            // for(let i=0; i <= matchedCards.length; i++){
-            //     matchedCards[i].classList.remove('matched');
-            } else if (points >= 180) {
-                flippedCard[0].className = 'card';
-            }
-}};
-
+            points = 0;
+            return points
+        } else if (points >= 180) {
+            clearInterval(refreshInterval);
+            win.classList.add('visible');
+            points = 0;
+            return points
+        };
+     }}
 
 startBtn.addEventListener('click', function (){
-    
     shuffleCards();
     startBtn.classList.remove('visible');
-    testFunction ();
+    reset();
 });
 
 gameover.addEventListener('click', function(){
+    let matchedCards = document.querySelectorAll('div.card.matched');
+    let flippedCard = document.querySelectorAll('div.card.flippedCard');
+    if (flippedCard.length > 0){
+    flippedCard[0].classList.remove('flippedCard');
+    };
+    for(let i=0; i < matchedCards.length; i++){
+        matchedCards[i].classList.remove('matched');
+    };
     shuffleCards();
     gameover.classList.remove('visible');
-    testFunction ();
+    reset();
 });
 
 
 win.addEventListener('click', function (){
+    let matchedCards = document.querySelectorAll('div.card.matched');
+
+    for(let i=0; i < matchedCards.length; i++){
+        matchedCards[i].classList.remove('matched');
+    };
     shuffleCards();
     win.classList.remove('visible');
-    testFunction();
+    reset();
 });
