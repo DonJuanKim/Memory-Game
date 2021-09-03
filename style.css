@@ -23,8 +23,6 @@ body {
     margin-right: 200px;
     display: flex;
     justify-content: space-between;
-
-    
 }
 
 .overlay {
@@ -53,7 +51,6 @@ body {
     grid-template-columns: repeat(6, auto);
     grid-gap: 10px;
     justify-content: center;
-
 }
 
 .card-container > div img {
@@ -69,7 +66,6 @@ body {
     transform-style: preserve-3d;
     transition: all 0.8s ease;
 }
-
 
 .card-back {
     position : absolute;

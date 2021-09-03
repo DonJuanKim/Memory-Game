@@ -6,14 +6,29 @@ const gameover = document.getElementById('overlay-gameover-text');
 const win = document.getElementById('overlay-win');
 let points = 0;
 
+// Shuffle cards randomly. Every game is different.
 
 function shuffleCards() {
-for(let i = cards.length - 1; i > 0; i--){
-    let randIndex = Math.floor(Math.random() * (i+1));
-    cards[randIndex].style.order = i;
-    cards[i].style.order = randIndex;
+    for(let i = cards.length - 1; i > 0; i--){
+        let randIndex = Math.floor(Math.random() * (i+1));
+        cards[randIndex].style.order = i;
+        cards[i].style.order = randIndex;
 }
 }
+
+
+// Make cards flipable. Check matches if two cards are picked.
+for(let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', function(){
+    cards[i].classList.add('flippedCard');
+    let flippedCard = document.querySelectorAll('.card.flippedCard');
+    
+    if (flippedCard.length == 2) {
+            checkMatch(flippedCard);
+    }})}
+
+
+// Check matches. if two don't match, flip them back.
 
 function checkMatch(flippedCard) {
     let pickedCards = document.querySelectorAll('.card.flippedCard .card-front img');
@@ -37,20 +52,8 @@ function checkMatch(flippedCard) {
         console.log("try again");
     }}
 
-
-// Flip cards
-for(let i = 0; i < cards.length; i++) {
-    cards[i].addEventListener('click', function(){
-    cards[i].classList.add('flippedCard');
-    let flippedCard = document.querySelectorAll('.card.flippedCard');
-    
-    if (flippedCard.length == 2) {
-            checkMatch(flippedCard);
-    }})}
-
-
-
-// countdown function
+// Reset the game for the next one. 
+// when time runs out/ you win the game<
 
 function reset() {
     
@@ -68,20 +71,26 @@ function reset() {
             clearInterval(refreshInterval);
             gameover.classList.add('visible');
             points = 0;
+            score.innerHTML = points;
             return points
         } else if (points >= 180) {
             clearInterval(refreshInterval);
             win.classList.add('visible');
             points = 0;
+            score.innerHTML = points;
             return points
         };
      }}
+
+// Start games click event
 
 startBtn.addEventListener('click', function (){
     shuffleCards();
     startBtn.classList.remove('visible');
     reset();
 });
+
+// Game over click event
 
 gameover.addEventListener('click', function(){
     let matchedCards = document.querySelectorAll('div.card.matched');
@@ -97,6 +106,7 @@ gameover.addEventListener('click', function(){
     reset();
 });
 
+// win click event
 
 win.addEventListener('click', function (){
     let matchedCards = document.querySelectorAll('div.card.matched');
